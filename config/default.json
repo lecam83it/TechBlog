@@ -1,0 +1,10 @@
+{
+    "server" : {
+        "host" : "localhost",
+        "port" : 3000
+    },
+    "mongoDB" : {
+        "url" : "mongodb://lecam:lecam16T1@ds125021.mlab.com:25021/lc_vlog"
+    },
+    "saltRounds" : 10
+}

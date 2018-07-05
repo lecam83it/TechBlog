@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body style="background: #E9EBEE">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/user">Trang Chủ</a>
+            <form class="form-inline" action="/admin/signin" method="POST">
+                <input class="form-control mr-sm-2" type="text" name="email" placeholder="Email">
+                <input class="form-control mr-sm-2" type="password" name="password" placeholder="Password">
+                <button class="btn btn-success" type="submit">Đăng nhập</button>
+            </form>
+        </div>
+    </nav>
+    <div class="container mt-2">
+        <% if(alertCustom.status == 1) { %>
+        <div class="alert alert-danger" role="alert" style="display: block;"> 
+            <strong>
+               <%= alertCustom.message %>
+            </strong>
+        </div>
+        <% } else if(alertCustom.status == 2) { %>
+        <div class="alert alert-success" role="alert" style="display: block;">
+            <strong>
+                <%= alertCustom.message %>
+            </strong>
+        </div>
+        <% } %>
+        <div class="row">
+            <div class="col-sm-6 mt-4">
+                <h2>Đăng nhập gần đây</h2>
+                <h3>
+                    <small>Nhấp vào ảnh của bạn hoặc thêm tài khoản.</small>
+                </h3>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <header class="card-header">
+                        <h2 class="card-title mt-2">Tạo tài khoản mới</h2>
+                        <h4>
+                            <small>Miễn phí và sẽ luôn như vậy.</small>
+                        </h4>
+                    </header>
+                    <article class="card-body">
+                        <form action="/admin/signup" method="POST">
+                            <div class="form-row">
+                                <div class="col form-group">
+                                    <label>First name </label>
+                                    <input type="text" class="form-control" name="first_name">
+                                </div>
+                                <!-- form-group end.// -->
+                                <div class="col form-group">
+                                    <label>Last name</label>
+                                    <input type="text" class="form-control" placeholder="" name="last_name">
+                                </div>
+                                <!-- form-group end.// -->
+                            </div>
+                            <!-- form-row end.// -->
+                            <div class="form-group">
+                                <label>Email address</label>
+                                <input type="email" class="form-control" placeholder="" name="email">
+                                <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div>
+
+                            <!-- form-row.// -->
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input class="form-control" type="password" name="password">
+                            </div>
+                            <!-- form-row.// -->
+                            <div class="form-group">
+                                <label>Repeat Password</label>
+                                <input class="form-control" type="password" name="repeat_password">
+                            </div>
+                            <!-- form-group end.// -->
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block"> Register </button>
+                            </div>
+                            <!-- form-group// -->
+                            <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our
+                                <br> Terms of use and Privacy Policy.</small>
+                        </form>
+                    </article>
+
+                </div>
+                <!-- card.// -->
+            </div>
+            <!-- col.//-->
+
+        </div>
+        <!-- row.//-->
+
+
+    </div>
+    <br>
+    <br>
+    <article class="bg-secondary mb-3">
+        <div class="card-body text-center">
+            <h3 class="text-white mt-3">Bootstrap 4 UI KIT</h3>
+            <p class="h5 text-white">Components and templates
+                <br> for Ecommerce, marketplace, booking websites and product landing pages</p>
+            <br>
+            <p>
+                <a class="btn btn-warning" target="_blank" href="http://bootstrap-ecommerce.com/"> Bootstrap-ecommerce.com
+                    <i class="fa fa-window-restore "></i>
+                </a>
+            </p>
+        </div>
+        <br>
+        <br>
+    </article>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
