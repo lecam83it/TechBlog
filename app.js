@@ -4,6 +4,7 @@ var logger = require("morgan");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 var session = require("express-session");
+var socketIO = require('socket.io');
 // import moduls
 var controllers = require("./apps/controllers");
 //connect mongoDB in mLab.com
@@ -49,6 +50,10 @@ app.use(controllers);
 
 // listen Server
 
-app.listen(PORT, function() {
+var server = app.listen(PORT, function() {
   console.log(`Server is running on port ${PORT}`);
 });
+
+var io = socketIO(server);
+
+require('./apps/common/ioController')(io);
